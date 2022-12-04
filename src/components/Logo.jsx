@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import logoImg from "../assets/logo.svg";
+import logoImg from "../assets/logo.svg";
 
 const StyledLogo = styled.img`
   width: 108px;
@@ -8,5 +8,5 @@ const StyledLogo = styled.img`
 `;
 
 export const Logo = () => {
-  return <StyledLogo src={""}></StyledLogo>;
+  return <StyledLogo src={logoImg}></StyledLogo>;
 };
