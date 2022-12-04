@@ -5,6 +5,7 @@ import logoImg from "../assets/logo.svg";
 const StyledLogo = styled.img`
   width: 108px;
   height: 24px;
+  cursor: pointer;
 `;
 
 export const Logo = () => {

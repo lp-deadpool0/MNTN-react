@@ -18,6 +18,7 @@ function App() {
     <AppWrapper>
       <Hero />
       <Section
+        id="first"
         count="01"
         subTitle="GEt Started"
         title="What level of hiker are&nbsp;you?"
@@ -32,6 +33,7 @@ function App() {
         moderate, expert, or&nbsp;expert backpacker?
       </Section>
       <Section
+        id="second"
         count="02"
         turn="true"
         subTitle="Hiking Essentials"
@@ -46,6 +48,7 @@ function App() {
         will get heavy and chafe wif they get sweaty or&nbsp;wet.
       </Section>
       <Section
+        id="third"
         count="03"
         subTitle="where you go is the key"
         title="Understand Your Map&nbsp;&&nbsp;Timing"

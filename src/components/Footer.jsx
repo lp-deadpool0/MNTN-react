@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Logo } from "./Logo";
+import { Link } from "react-scroll";
 
 const Wrapper = styled.footer`
   display: grid;
@@ -70,7 +71,9 @@ export const Footer = () => {
   return (
     <Wrapper>
       <Section>
-        <Logo />
+        <Link to="start" smooth={true} duration={1000}>
+          <Logo />
+        </Link>
         <Descript>
           Get out there & discover your next slope, mountain & destination!
         </Descript>
