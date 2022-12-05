@@ -116,6 +116,9 @@ const PageList = styled.ul`
   grid-gap: 40px;
   & li {
     cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 const Shadow = styled.div`
@@ -140,6 +143,9 @@ const Pages = styled.div`
   justify-content: center;
   align-items: center;
 
+  & * {
+    transition: 0.2s;
+  }
   & div {
     display: flex;
     justify-content: center;
@@ -148,6 +154,8 @@ const Pages = styled.div`
 
     &::before {
       content: "";
+      transition: 0.2s;
+
       position: absolute;
       top: ${(props) => props.lineCoords + "px"};
       left: 0;
@@ -169,20 +177,24 @@ export const Hero = () => {
   const [lineCoords, setLineCoords] = React.useState("0");
   const [prevY, setPrevY] = React.useState(null);
 
-  const changeCoords = (e) => {
-    if (prevY === null) {
-      setPrevY(e.clientY);
-    } else if (prevY !== null) {
-      if (prevY > e.clientY) {
-        setTimeout(console.log("up"), 3000);
-        console.log(prevY);
-        setPrevY(e.clientY);
-      } else if (prevY < e.clientY) {
-        setTimeout(console.log("down"), 3000);
-        setPrevY(e.clientY);
-        console.log(prevY);
-      }
-    }
+  // const changeCoords = (e) => {
+  //   if (prevY === null) {
+  //     setPrevY(e.clientY);
+  //   } else if (prevY !== null) {
+  //     if (prevY > e.clientY) {
+  //       setTimeout(console.log("up"), 3000);
+  //       console.log(prevY);
+  //       setPrevY(e.clientY);
+  //     } else if (prevY < e.clientY) {
+  //       setTimeout(console.log("down"), 3000);
+  //       setPrevY(e.clientY);
+  //       console.log(prevY);
+  //     }
+  //   }
+  // };
+
+  const moveLine = (num) => {
+    setLineCoords(num);
   };
 
   return (
@@ -212,21 +224,47 @@ export const Hero = () => {
           </Offer>
 
           <Pages
-            onMouseMove={(e) => {
-              let x = e;
-              changeCoords(x);
+            onMouseLeave={() => {
+              moveLine(0);
             }}
-            lineCoords={prevY}
+            lineCoords={lineCoords}
           >
             <PageList>
-              <li>Start</li>
-              <Link to="first" smooth={true} duration={1000}>
+              <li
+                onMouseMove={() => {
+                  moveLine(0);
+                }}
+              >
+                Start
+              </li>
+              <Link
+                onMouseMove={() => {
+                  moveLine(59);
+                }}
+                to="first"
+                smooth={true}
+                duration={1000}
+              >
                 <li>01</li>
               </Link>
-              <Link to="second" smooth={true} duration={1000}>
+              <Link
+                onMouseMove={() => {
+                  moveLine(59 * 2);
+                }}
+                to="second"
+                smooth={true}
+                duration={1000}
+              >
                 <li>02</li>
               </Link>
-              <Link to="third" smooth={true} duration={1000}>
+              <Link
+                onMouseMove={() => {
+                  moveLine(59 * 3);
+                }}
+                to="third"
+                smooth={true}
+                duration={1000}
+              >
                 <li>03</li>
               </Link>
             </PageList>
