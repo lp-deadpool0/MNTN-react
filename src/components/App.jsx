@@ -23,7 +23,7 @@ function App() {
         subTitle="GEt Started"
         title="What level of hiker are&nbsp;you?"
         imgPath={img1}
-        padding="true"
+        padding={true}
       >
         Determining what level of&nbsp;hiker you are can
         be&nbsp;an&nbsp;important tool when planning future hikes. This hiking
@@ -35,11 +35,11 @@ function App() {
       <Section
         id="second"
         count="02"
-        turn="true"
+        turn={true}
         subTitle="Hiking Essentials"
         title="Picking the right Hiking&nbsp;Gear!"
         imgPath={img2}
-        padding="true"
+        padding={true}
       >
         The nice thing about beginning hiking is&nbsp;that you don&rsquo;t
         really need any special gear, you can probably get away with things you

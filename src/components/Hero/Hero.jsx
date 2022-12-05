@@ -113,8 +113,10 @@ const PageList = styled.ul`
 
   display: grid;
   grid-template-rows: auto;
-  grid-gap: 40px;
+  grid-gap: 25px;
   & li {
+    min-height: 35px;
+    min-width: 35px;
     cursor: pointer;
     &:hover {
       transform: scale(1.1);

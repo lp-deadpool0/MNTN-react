@@ -19,8 +19,13 @@ const Info = styled.div`
   grid-template-rows: auto;
   max-width: 632px;
   grid-gap: 27px;
-  ${(props) => (props.turn ? "margin-left: 264px;" : "margin-right: 114px;")}
   position: relative;
+  margin-right: 114px;
+
+  ${(props) =>
+    props.turn == true ? "margin-left: 264px;" : "margin-right: 114px;"}
+
+  ${(props) => (props.turn ? "margin-left: 264px;" : console.log(props.turn))}
 
   &::before {
     content: "${(props) => props.count}";
@@ -103,13 +108,13 @@ const Image = styled.div`
 
 export const Section = (props) => {
   return (
-    <Wrapper id={props.id}>
+    <Wrapper id={props.id} padding={props.padding}>
       {props.turn ? (
         <>
           <Image>
             <img src={props.imgPath} alt="Mountains" />
           </Image>
-          <Info>
+          <Info turn={props.turn} count={props.count}>
             <SubTitle>{props.subTitle}</SubTitle>
             <Title>{props.title}</Title>
             <Descript>{props.children}</Descript>
@@ -118,7 +123,7 @@ export const Section = (props) => {
         </>
       ) : (
         <>
-          <Info>
+          <Info turn={props.turn} count={props.count}>
             <SubTitle>{props.subTitle}</SubTitle>
             <Title>{props.title}</Title>
             <Descript>{props.children}</Descript>
