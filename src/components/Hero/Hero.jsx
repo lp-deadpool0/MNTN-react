@@ -30,6 +30,7 @@ const FollowUs = styled.ul`
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
+  margin-right: 20px;
 
   & li:first-child {
     /* transform: rotate(90deg); */
@@ -141,6 +142,8 @@ const StyledHero = styled.div`
   position: relative;
 `;
 const Pages = styled.div`
+  margin-left: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
