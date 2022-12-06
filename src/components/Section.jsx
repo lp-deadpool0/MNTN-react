@@ -25,8 +25,6 @@ const Info = styled.div`
   ${(props) =>
     props.turn == true ? "margin-left: 264px;" : "margin-right: 114px;"}
 
-  ${(props) => (props.turn ? "margin-left: 264px;" : console.log(props.turn))}
-
   &::before {
     content: "${(props) => props.count}";
     position: absolute;
@@ -118,7 +116,9 @@ export const Section = (props) => {
             <SubTitle>{props.subTitle}</SubTitle>
             <Title>{props.title}</Title>
             <Descript>{props.children}</Descript>
-            <More href="http://localhost:5173/">read more</More>
+            <More href="https://t.me/lp_deadpool" target="_blank">
+              read more
+            </More>
           </Info>
         </>
       ) : (
@@ -127,7 +127,9 @@ export const Section = (props) => {
             <SubTitle>{props.subTitle}</SubTitle>
             <Title>{props.title}</Title>
             <Descript>{props.children}</Descript>
-            <More>read more</More>
+            <More href="https://t.me/lp_deadpool" target="_blank">
+              read more
+            </More>
           </Info>
           <Image>
             <img src={props.imgPath} alt="Mountains" />
